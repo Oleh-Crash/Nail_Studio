@@ -1,0 +1,138 @@
+
+:root {
+    --main-colour: black;
+}
+
+body {
+    max-width: 980px;
+    margin: auto;
+}
+
+.header-nav .menu-items {
+    justify-content: space-around;
+    flex: 1;
+    display: none;
+}
+
+.header-nav .menu-items a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--main-colour);
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+.header-nav .menu-items a:hover{
+    border: 1px solid var(--main-colour);
+}
+
+@media (min-width: 769px) {
+    .header-nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+.header-banner {
+    background-image: url(../img/estnail.jpeg);
+    background-position: right;
+    background-size: cover;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.button{
+    padding: 0.35rem 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.7s;
+    background-color: transparent;
+}
+
+.button:hover {
+    color: #000000;
+    background-color: red;
+    cursor: pointer;
+}
+
+.card-button{
+    border-color: #000000;
+    color: #000000;
+}
+
+.header-banner h1 {
+    font-size: 3,5rem;
+    color: var(--accent-color);
+}
+
+.portfolio-list img {
+    width: 100%; height: 300px;  
+    /* width: 250px; height: 250px ; */
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+}
+
+@media (min-width: 360px) {
+    .portfolio-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5 px;
+    }
+}
+@media (min-width: 600px) {
+    
+    .portfolio-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 800px) {
+    .portfolio-list {
+        grid-template-columns: repeat(4 1fr);
+    }
+}
+
+/*Burger menu */
+
+.burger-icon {
+    font-size: 2rem;
+}
+
+.burger-icon:hover {
+    cursor: pointer;
+}
+
+#burger-checkbox {
+    display: none;
+}
+
+.header-nav input :checked .menu-items {
+    display: block;
+}
+
+.burger-icon {
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+@media (min-width: 769px) {
+    
+    .burger-icon {
+        display: none;
+    }
+    .header-nav {
+        display: flex;
+        align-items: center;
+        grid-gap: 5 px;
+    }
+    #burger-checkbox .menu-items{
+        display: flex;
+    }
+}
